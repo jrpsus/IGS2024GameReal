@@ -10,9 +10,11 @@ public class PlayerScript : MonoBehaviour
     public float maxhp = 1000;
     public float cash = 0;
     public float movespeed = 1;
+    public float regenspeed = 1;
     public GameObject cam;
     public Vector3 movement;
     public Rigidbody2D rb;
+    public bool[] perks;
     Vector3 mx;
     Vector3 my;
 
@@ -39,6 +41,11 @@ public class PlayerScript : MonoBehaviour
         rb.AddForce(movement);
         cam.transform.position = transform.position - new Vector3(0, 0, 10);
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+        hp += regenspeed * Time.deltaTime;
+        if (hp >= maxhp)
+        {
+            hp = maxhp;
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)

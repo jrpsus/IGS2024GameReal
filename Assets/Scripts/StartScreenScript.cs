@@ -11,11 +11,13 @@ public class StartScreenScript : MonoBehaviour
     public Color color;
     public int buttonType;
     public int page;
-    public bool starting = false;
+    public StartScreenMain main;
     void Start()
     {
+        text = this.GetComponent<TextMeshProUGUI>();
+        color = text.color;
         color.a = 0;
-        text.color = color;
+        main = GameObject.Find("StartScreenManager").GetComponent<StartScreenMain>();
     }
 
     void Update()
@@ -27,7 +29,14 @@ public class StartScreenScript : MonoBehaviour
         }
         else
         {
-            color.a += Time.deltaTime / 2;
+            if (main.starting)
+            {
+                color.a -= Time.deltaTime / 2;
+            }
+            else
+            {
+                color.a += Time.deltaTime / 2;
+            }
         }
     }
 }
