@@ -19,6 +19,7 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         cam = Camera.main.gameObject;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
