@@ -23,7 +23,7 @@ public class StartScreenScript : MonoBehaviour
     void Update()
     {
         text.color = color;
-        if (color.a >= 1)
+        if (color.a > 1)
         {
             color.a = 1;
         }

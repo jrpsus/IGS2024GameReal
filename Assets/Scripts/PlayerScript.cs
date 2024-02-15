@@ -10,12 +10,14 @@ public class PlayerScript : MonoBehaviour
     public float maxhp = 1000;
     public float cash = 0;
     public float movespeed;
-    public float movespeedx = 1;
-    public float regenspeed = 1;
+    public float movespeedx;
+    public float regenspeed;
     public GameObject cam;
     public Vector3 movement;
     public Rigidbody2D rb;
     public bool[] perks;
+    public string[] inv;
+    public int[] invc;
     Vector3 mx;
     Vector3 my;
 

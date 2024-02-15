@@ -694,6 +694,7 @@ MonoBehaviour:
   color: {r: 0, g: 0, b: 0, a: 0}
   buttonType: 0
   page: 0
+  main: {fileID: 0}
 --- !u!1 &1043011939
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,7 +753,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: '[ ]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8d83340f1615bf848a0ceae2d4c3ecf4, type: 2}
   m_sharedMaterial: {fileID: -6003330784296841367, guid: 8d83340f1615bf848a0ceae2d4c3ecf4, type: 2}
@@ -847,6 +848,7 @@ MonoBehaviour:
   color: {r: 1, g: 1, b: 1, a: 0}
   buttonType: 0
   page: 0
+  main: {fileID: 0}
 --- !u!1 &1139674085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,6 +1268,7 @@ MonoBehaviour:
   color: {r: 0, g: 0, b: 0, a: 0}
   buttonType: 0
   page: 0
+  main: {fileID: 0}
 --- !u!1 &1346724078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,6 +1422,7 @@ MonoBehaviour:
   color: {r: 0, g: 0, b: 0, a: 0}
   buttonType: 0
   page: 0
+  main: {fileID: 0}
 --- !u!1 &1729348331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,6 +1453,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPage: 0
+  starting: 0
+  startTime: 2
 --- !u!4 &1729348333
 Transform:
   m_ObjectHideFlags: 0
@@ -1856,6 +1862,7 @@ MonoBehaviour:
   color: {r: 0, g: 0, b: 0, a: 0}
   buttonType: 0
   page: 0
+  main: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
