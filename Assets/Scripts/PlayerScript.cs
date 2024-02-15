@@ -9,7 +9,8 @@ public class PlayerScript : MonoBehaviour
     public float hp = 1000;
     public float maxhp = 1000;
     public float cash = 0;
-    public float movespeed = 1;
+    public float movespeed;
+    public float movespeedx = 1;
     public float regenspeed = 1;
     public GameObject cam;
     public Vector3 movement;
@@ -31,11 +32,11 @@ public class PlayerScript : MonoBehaviour
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            movespeed = 2;
+            movespeed = 2 * movespeedx;
         }
         else
         {
-            movespeed = 1;
+            movespeed = movespeedx;
         }
         movement = new Vector3(Input.GetAxisRaw("Horizontal") * movespeed, Input.GetAxisRaw("Vertical") * movespeed, 0);
         rb.AddForce(movement);
