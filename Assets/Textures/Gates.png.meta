@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: b60742e9d5e733444a0f76c12207db68
+guid: 5aade29501565fa43bee025c19649f9e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5514988714305932980
-    second: Brick_Wall_64x64_0
+      213: 2179673419495629613
+    second: Gates_0
+  - first:
+      213: 1046721849985281810
+    second: Gates_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Brick_Wall_64x64_0
+      name: Gates_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 25
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +117,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4be4e78140d298c40800000000000000
-      internalID: 5514988714305932980
+      spriteID: d23e5673d61cf3e10800000000000000
+      internalID: 2179673419495629613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gates_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 25
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21f230f0af3b68e00800000000000000
+      internalID: 1046721849985281810
       vertices: []
       indices: 
       edges: []
@@ -131,7 +155,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Brick_Wall_64x64_0: 5514988714305932980
+      Gates_0: 2179673419495629613
+      Gates_1: 1046721849985281810
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
