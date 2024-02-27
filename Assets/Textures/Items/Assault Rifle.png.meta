@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3c7e5b16a59e31846ac81c542ed726c8
+guid: 4b735af13129d3f4ca3c81d482455644
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5139375428790616537
-    second: Wooden_Floor_0
+      213: -7294950060073342275
+    second: Assault Rifle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wooden_Floor_0
+      name: Assault Rifle_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 16
-        height: 16
+        y: 5
+        width: 32
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9d18f6019bab25740800000000000000
-      internalID: 5139375428790616537
+      spriteID: dba2d17129123ca90800000000000000
+      internalID: -7294950060073342275
       vertices: []
       indices: 
       edges: []
@@ -130,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Wooden_Floor_0: 5139375428790616537
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

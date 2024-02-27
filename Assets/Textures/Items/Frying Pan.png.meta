@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3c7e5b16a59e31846ac81c542ed726c8
+guid: d09d1e7f11cda2e48890ddc14a61e257
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5139375428790616537
-    second: Wooden_Floor_0
+      213: 814319372411480207
+    second: Frying Pan_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wooden_Floor_0
+      name: Frying Pan_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 5
         y: 0
-        width: 16
-        height: 16
+        width: 22
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9d18f6019bab25740800000000000000
-      internalID: 5139375428790616537
+      spriteID: f882e4e972b0d4b00800000000000000
+      internalID: 814319372411480207
       vertices: []
       indices: 
       edges: []
@@ -131,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Wooden_Floor_0: 5139375428790616537
+      Frying Pan_0: 814319372411480207
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

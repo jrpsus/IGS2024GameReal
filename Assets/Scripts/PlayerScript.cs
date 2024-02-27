@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour
     public float movespeed;
     public float movespeedx;
     public float regenspeed;
+    public int holding = 0;
     public GameObject cam;
     public Vector3 movement;
     public Rigidbody2D rb;
@@ -49,6 +50,11 @@ public class PlayerScript : MonoBehaviour
         {
             hp = maxhp;
         }
+    }
+    
+    public void HoldItem (int num)
+    {
+        holding = num;
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
