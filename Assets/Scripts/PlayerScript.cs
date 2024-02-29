@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class PlayerScript : MonoBehaviour
     public bool[] perks;
     public string[] inv;
     public int[] invc;
+    public PauseScript pause;
     Vector3 mx;
     Vector3 my;
 
@@ -26,29 +28,33 @@ public class PlayerScript : MonoBehaviour
     {
         cam = Camera.main.gameObject;
         rb = GetComponent<Rigidbody2D>();
+        pause = GameObject.Find("GameData").GetComponent<PauseScript>();
     }
 
     void Update()
     {
-        Vector3 mousepos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 dir = (mousepos - transform.position).normalized;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (!pause.paused)
         {
-            movespeed = 2 * movespeedx;
-        }
-        else
-        {
-            movespeed = movespeedx;
-        }
-        movement = new Vector3(Input.GetAxisRaw("Horizontal") * movespeed, Input.GetAxisRaw("Vertical") * movespeed, 0);
-        rb.AddForce(movement);
-        cam.transform.position = transform.position - new Vector3(0, 0, 10);
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
-        hp += regenspeed * Time.deltaTime;
-        if (hp >= maxhp)
-        {
-            hp = maxhp;
+            Vector3 mousepos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 dir = (mousepos - transform.position).normalized;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                movespeed = 2 * movespeedx;
+            }
+            else
+            {
+                movespeed = movespeedx;
+            }
+            movement = new Vector3(Input.GetAxisRaw("Horizontal") * movespeed, Input.GetAxisRaw("Vertical") * movespeed, 0);
+            rb.AddForce(movement);
+            cam.transform.position = transform.position - new Vector3(0, 0, 10);
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+            hp += regenspeed * Time.deltaTime;
+            if (hp >= maxhp)
+            {
+                hp = maxhp;
+            }
         }
     }
     

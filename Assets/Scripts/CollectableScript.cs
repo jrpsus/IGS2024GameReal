@@ -18,7 +18,7 @@ public class CollectableScript : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (cd < 0)
+        if (cd < 0 && collision.CompareTag("Player"))
         {
             if (type == 1)
             {

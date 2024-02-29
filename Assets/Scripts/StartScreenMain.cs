@@ -10,7 +10,9 @@ public class StartScreenMain : MonoBehaviour
     public float startTime = 2;
     void Start()
     {
-        
+        menuPage = 0;
+        starting = false;
+        Time.timeScale = 1.0f;
     }
 
     void Update()
