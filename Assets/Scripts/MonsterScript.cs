@@ -6,7 +6,7 @@ public class MonsterScript : MonoBehaviour
 {
     public float hp;
     public float maxhp;
-    public float moneyDropped;
+    public int[] moneyDropped;
     public Transform player;            // Reference to the player GameObject
     public Rigidbody2D rb;
     public float movementSpeed = 5f;    // Speed at which the enemy moves

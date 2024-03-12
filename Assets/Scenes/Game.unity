@@ -3064,13 +3064,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506717231}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32, y: 24, z: 0}
+  m_LocalRotation: {x: -0.60876137, y: -0.7933534, z: 0, w: 0}
+  m_LocalPosition: {x: 34, y: 23, z: 0}
   m_LocalScale: {x: 128, y: 128, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1794291992}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 255}
 --- !u!212 &506717233
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3114,7 +3114,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -4
-  m_Sprite: {fileID: 6764707825347140516, guid: 5c9658dd9d486aa4c87e5ac1f620d43f, type: 3}
+  m_Sprite: {fileID: -7294950060073342275, guid: 4b735af13129d3f4ca3c81d482455644, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3137,10 +3137,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12a2dbebdf3d85d4f936aa5350eca92f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: []
-  rotationOffset: []
-  scaleOffset: []
+  offset:
+  - {x: 34, y: 24, z: 0}
+  - {x: 34, y: 20, z: 0}
+  - {x: 34, y: 24, z: 0}
+  - {x: 34, y: 24, z: 0}
+  - {x: 34, y: 24, z: 0}
+  - {x: 32, y: 21, z: 0}
+  - {x: 34, y: 32, z: 0}
+  - {x: 34, y: 23, z: 0}
+  - {x: 34, y: 24, z: 0}
+  - {x: 34, y: 25, z: 0}
+  rotationOffset:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 90}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 90}
+  - {x: 0, y: 0, z: 0}
+  - {x: 180, y: 0, z: 250}
+  - {x: 0, y: 0, z: 0}
+  - {x: 180, y: 0, z: 255}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  scaleOffset:
+  - {x: 128, y: 128, z: 1}
+  - {x: 128, y: 128, z: 1}
+  - {x: 128, y: 128, z: 1}
+  - {x: 128, y: 128, z: 1}
+  - {x: 128, y: 128, z: 1}
+  - {x: 128, y: 128, z: 1}
+  - {x: 160, y: 160, z: 1}
+  - {x: 128, y: 128, z: 1}
+  - {x: 128, y: 128, z: 1}
+  - {x: 128, y: 128, z: 1}
   playerScript: {fileID: 0}
+  sprite: {fileID: 506717233}
+  rightArm: {fileID: 1794291992}
+  inv: {fileID: 0}
 --- !u!1 &526136916
 GameObject:
   m_ObjectHideFlags: 0
@@ -3845,9 +3878,11 @@ MonoBehaviour:
   zombieArsonists: 
   zombieFreezers: 
   gateUnlocked: 00
+  mouse: 0
   spawnPosition:
   - {x: 0, y: 4}
-  spawnRange: []
+  spawnRange:
+  - {x: 5, y: 0}
 --- !u!114 &797236422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6004,7 +6039,7 @@ GameObject:
   - component: {fileID: 1255032544}
   - component: {fileID: 1255032545}
   m_Layer: 0
-  m_Name: Temporary Monster
+  m_Name: Temporary Thug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6022,9 +6057,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c65ed6684949c8e43b5111d41c346065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
-  maxhp: 0
-  moneyDropped: 0
+  hp: 50
+  maxhp: 50
+  moneyDropped: 0a0000000200000000000000000000000000000000000000000000000000000000000000
   player: {fileID: 0}
   rb: {fileID: 0}
   movementSpeed: 5
@@ -9004,7 +9039,7 @@ MonoBehaviour:
   movement: {x: 0, y: 0, z: 0}
   rb: {fileID: 2035025798}
   perks: 00000000000000000000
-  inv: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  inv: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
   invc: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   invt: 
   pause: {fileID: 797236422}
@@ -9544,7 +9579,10 @@ MonoBehaviour:
   - Assault Rife
   - Grenade
   - Battlestaff
-  itemType: 01000000010000000100000001000000010000000100000001000000010000000100000001000000
+  - Arrow
+  - Ice Arrow
+  - Bullet
+  itemType: 01000000010000000100000001000000010000000100000001000000010000000100000001000000020000000200000002000000
   itemDamage:
   - 10
   - 40
@@ -9556,6 +9594,9 @@ MonoBehaviour:
   - 300
   - 1000
   - 1500
+  - 1
+  - 1
+  - 2
   itemCooldown:
   - 0.5
   - 1.2
@@ -9567,6 +9608,9 @@ MonoBehaviour:
   - 0.2
   - 1.5
   - 1
+  - 0
+  - 0
+  - 0
   itemImage:
   - {fileID: 6764707825347140516, guid: 5c9658dd9d486aa4c87e5ac1f620d43f, type: 3}
   - {fileID: 3169708160489268158, guid: 8a822465ba8204f4882932c6f9ae9b00, type: 3}

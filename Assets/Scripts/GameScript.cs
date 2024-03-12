@@ -15,6 +15,7 @@ public class GameScript : MonoBehaviour
     public int[] zombieArsonists;
     public int[] zombieFreezers;
     public bool[] gateUnlocked;
+    public float mouse;
     public Vector2[] spawnPosition;
     public Vector2[] spawnRange;
 
@@ -25,6 +26,6 @@ public class GameScript : MonoBehaviour
 
     void Update()
     {
-        
+        mouse = Input.mousePosition.y;
     }
 }
