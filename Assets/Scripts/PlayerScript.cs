@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Unity.VisualScripting;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -22,6 +21,8 @@ public class PlayerScript : MonoBehaviour
     public int[] inv;
     public int[] invc;
     public int[] invt;
+    public Animator anim;
+    public int[] animType;
     public PauseScript pause;
     Vector3 mx;
     Vector3 my;
@@ -93,6 +94,14 @@ public class PlayerScript : MonoBehaviour
             cam.transform.position = transform.position - new Vector3(0, 0, 10);
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
             hp += regenspeed * Time.deltaTime;
+            if (Input.GetMouseButton(0))
+            {
+                anim.SetInteger("State", animType[inv[holding] + 1]);
+            }
+            else
+            {
+                anim.SetInteger("State", 0);
+            }
             if (hp >= maxhp)
             {
                 hp = maxhp;
@@ -102,17 +111,23 @@ public class PlayerScript : MonoBehaviour
     
     public void HoldItem (int num)
     {
-        holding = num;
+        if (!pause.paused)
+        {
+            holding = num;
+        }
     }
 
     public void SwapItem(int num, int num2)
     {
-        invt[0] = inv[num];
-        invt[1] = invc[num];
-        inv[num] = inv[num2];
-        invc[num] = invc[num2];
-        inv[num2] = invt[0];
-        invc[num2] = invc[1];
+        if (!pause.paused)
+        {
+            invt[0] = inv[num];
+            invt[1] = invc[num];
+            inv[num] = inv[num2];
+            invc[num] = invc[num2];
+            inv[num2] = invt[0];
+            invc[num2] = invc[1];
+        }
     }
 
     public void DropItem(int num)

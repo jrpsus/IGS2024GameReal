@@ -3064,13 +3064,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506717231}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.60876137, y: -0.7933534, z: 0, w: 0}
-  m_LocalPosition: {x: 34, y: 23, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34, y: 24, z: 0}
   m_LocalScale: {x: 128, y: 128, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1794291992}
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 255}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &506717233
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3114,7 +3114,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -4
-  m_Sprite: {fileID: -7294950060073342275, guid: 4b735af13129d3f4ca3c81d482455644, type: 3}
+  m_Sprite: {fileID: 6764707825347140516, guid: 5c9658dd9d486aa4c87e5ac1f620d43f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3172,7 +3172,6 @@ MonoBehaviour:
   - {x: 128, y: 128, z: 1}
   playerScript: {fileID: 0}
   sprite: {fileID: 506717233}
-  rightArm: {fileID: 1794291992}
   inv: {fileID: 0}
 --- !u!1 &526136916
 GameObject:
@@ -8981,6 +8980,7 @@ GameObject:
   - component: {fileID: 2035025800}
   - component: {fileID: 2035025799}
   - component: {fileID: 2035025798}
+  - component: {fileID: 2035025802}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -9039,9 +9039,11 @@ MonoBehaviour:
   movement: {x: 0, y: 0, z: 0}
   rb: {fileID: 2035025798}
   perks: 00000000000000000000
-  inv: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+  inv: 000000000100000002000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff
   invc: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
-  invt: 
+  invt: 0000000000000000
+  anim: {fileID: 2035025802}
+  animType: 01000000010000000200000003000000
   pause: {fileID: 797236422}
 --- !u!58 &2035025800
 CircleCollider2D:
@@ -9097,6 +9099,28 @@ Transform:
   - {fileID: 1794291992}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2035025802
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035025797}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5dbf083741fb28f4283ab7c582a9b152, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &2035184707
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class HeldItemScript : MonoBehaviour
     public Vector3[] scaleOffset;
     public PlayerScript playerScript;
     public SpriteRenderer sprite;
-    public Transform rightArm;
+    //public Transform rightArm;
     public Inventory inv;
     void Start()
     {
@@ -22,11 +22,12 @@ public class HeldItemScript : MonoBehaviour
     {
         if (playerScript.inv[playerScript.holding] == -1)
         {
+            sprite.sprite = null;
             sprite.color = new Color(1f, 1f, 1f, 0f);
         }
         else
         {
-            transform.localPosition = rightArm.localPosition + offset[playerScript.inv[playerScript.holding]];
+            transform.localPosition = offset[playerScript.inv[playerScript.holding]];
             transform.localRotation = Quaternion.Euler(rotationOffset[playerScript.inv[playerScript.holding]].x, rotationOffset[playerScript.inv[playerScript.holding]].y, rotationOffset[playerScript.inv[playerScript.holding]].z);
             transform.localScale = scaleOffset[playerScript.inv[playerScript.holding]];
             sprite.sprite = inv.itemImage[playerScript.inv[playerScript.holding]];
