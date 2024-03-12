@@ -1,18 +1,22 @@
 using UnityEngine;
 using UnityEngine.AI;
+using Aoiti.Pathfinding;
 
 public class MonsterScript : MonoBehaviour
 {
     public float hp;
     public float maxhp;
-    /*public Transform player;            // Reference to the player GameObject
+    public float moneyDropped;
+    public Transform player;            // Reference to the player GameObject
+    public Rigidbody2D rb;
     public float movementSpeed = 5f;    // Speed at which the enemy moves
 
     private NavMeshAgent navMeshAgent;
 
-    void Start()
+    /*void Start()
     {
         // Initialize the NavMeshAgent
+        Pathfinder<Vector2> pathfinder;
         navMeshAgent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player").transform;
 
@@ -34,6 +38,6 @@ public class MonsterScript : MonoBehaviour
 
         
         transform.LookAt(player.position);
-        transform.Translate(Vector3.forward * movementSpeed * Time.deltaTime);
+        //transform.Translate(Vector3.up * movementSpeed * Time.deltaTime);
     }*/
 }

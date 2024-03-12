@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class GameScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float timeRemaining;
+    public int monstersRemaining;
+    public int round = 1;
+    public int[] zombieThugs;
+    public int[] zombieFighters;
+    public int[] zombieShooters;
+    public int[] zombieBabies;
+    public int[] zombieAliens;
+    public int[] zombieArsonists;
+    public int[] zombieFreezers;
+    public bool[] gateUnlocked;
+    public Vector2[] spawnPosition;
+    public Vector2[] spawnRange;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         

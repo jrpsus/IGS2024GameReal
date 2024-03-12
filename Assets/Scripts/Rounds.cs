@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Waves : MonoBehaviour
+public class Rounds : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int[][] spawn;
     void Start()
     {
         
