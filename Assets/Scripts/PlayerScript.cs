@@ -8,13 +8,17 @@ public class PlayerScript : MonoBehaviour
 {
     public float hp = 1000;
     public float maxhp = 1000;
+    public float attack;
+    public float attackCooldown;
     public float cash = 0;
+    public float iFrames;
     public float movespeed;
     public float movespeedx;
     public float regenspeed;
     public int purchasePad;
     public int holding = 0;
     public GameObject cam;
+    public Rigidbody2D[] projectiles;
     public Vector3 movement;
     public Rigidbody2D rb;
     public bool[] perks;
@@ -22,14 +26,17 @@ public class PlayerScript : MonoBehaviour
     public int[] invc;
     public int[] invt;
     public Animator anim;
+    public Inventory inventory;
     public int[] animType;
     public PauseScript pause;
+    public int state;
     Vector3 mx;
     Vector3 my;
 
     void Start()
     {
         cam = Camera.main.gameObject;
+        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         rb = GetComponent<Rigidbody2D>();
         pause = GameObject.Find("GameData").GetComponent<PauseScript>();
     }
@@ -96,25 +103,76 @@ public class PlayerScript : MonoBehaviour
             hp += regenspeed * Time.deltaTime;
             if (Input.GetMouseButton(0))
             {
-                anim.SetInteger("State", animType[inv[holding] + 1]);
+                state = animType[inv[holding] + 1];
+                anim.SetInteger("State", state);
+                if (inv[holding] == 1 && attackCooldown <= 0f)
+                {
+                    attackCooldown = 1.15f;
+                    Rigidbody2D clone;
+                    clone = Instantiate(projectiles[0], transform.position, transform.rotation);
+                    clone.velocity = transform.TransformDirection(Vector3.up * clone.gameObject.GetComponent<ProjectileScript>().speed);
+                }
+                if (inv[holding] == -1)
+                {
+                    attackCooldown = 0.48f;
+                }
+                else
+                {
+                    attackCooldown = inventory.itemCooldown[inv[holding]] * 0.96f;
+                }
             }
             else
             {
                 anim.SetInteger("State", 0);
             }
+            if (inv[holding] == -1)
+            {
+                attack = 10;
+            }
+            else
+            {
+                attack = inventory.itemDamage[inv[holding]];
+            }
             if (hp >= maxhp)
             {
                 hp = maxhp;
             }
+            iFrames -= Time.deltaTime;
+            if (attackCooldown >= 0f)
+            {
+                attackCooldown -= Time.deltaTime;
+            }
+            else
+            {
+                state = 0;
+            }
         }
     }
-    
+    public void GiveItem(int id)
+    {
+        if (FindEmptySpace() != -1)
+        {
+            inv[FindEmptySpace()] = id;
+        }
+    }
     public void HoldItem (int num)
     {
         if (!pause.paused)
         {
             holding = num;
         }
+    }
+    public int FindEmptySpace()
+    {
+        int slot = -1;
+        for (int i = inv.Length; i <= 0; i--)
+        {
+            if (inv[i] == -1 && invc[i] == 0)
+            {
+                slot = i;
+            }
+        }
+        return slot;
     }
 
     public void SwapItem(int num, int num2)
@@ -134,9 +192,11 @@ public class PlayerScript : MonoBehaviour
     {
 
     }
-
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == "Monster Fist")
+        {
+
+        }
     }
 }

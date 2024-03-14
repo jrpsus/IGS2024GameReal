@@ -9,6 +9,7 @@ public class HeldItemScript : MonoBehaviour
     public Vector3[] scaleOffset;
     public PlayerScript playerScript;
     public SpriteRenderer sprite;
+    public GameObject hitbox;
     //public Transform rightArm;
     public Inventory inv;
     void Start()
@@ -24,6 +25,8 @@ public class HeldItemScript : MonoBehaviour
         {
             sprite.sprite = null;
             sprite.color = new Color(1f, 1f, 1f, 0f);
+            hitbox.transform.localPosition = new Vector3(33f, 4f, 0f);
+            hitbox.transform.localScale = new Vector3(16f, 24f, 1f);
         }
         else
         {
@@ -32,6 +35,20 @@ public class HeldItemScript : MonoBehaviour
             transform.localScale = scaleOffset[playerScript.inv[playerScript.holding]];
             sprite.sprite = inv.itemImage[playerScript.inv[playerScript.holding]];
             sprite.color = new Color(1f, 1f, 1f, 1f);
+            if (playerScript.inv[playerScript.holding] == 0)
+            {
+                hitbox.transform.localPosition = new Vector3(33.5f, 19f, 0f);
+                hitbox.transform.localScale = new Vector3(16f, 43f, 1f);
+            }
+            else if (playerScript.inv[playerScript.holding] == 1)
+            {
+                hitbox.transform.localScale = new Vector3(0f, 0f, 0f);
+            }
+            else if (playerScript.inv[playerScript.holding] == 2)
+            {
+                hitbox.transform.localPosition = new Vector3(33.5f, 21f, 0f);
+                hitbox.transform.localScale = new Vector3(16f, 43f, 1f);
+            }
         }
     }
 }
