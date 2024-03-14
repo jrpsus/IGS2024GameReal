@@ -388,6 +388,7 @@ MonoBehaviour:
   damage: 0
   monster: {fileID: 7691151294299583622}
   player: {fileID: 0}
+  playerScript: {fileID: 0}
   gate: {fileID: 0}
 --- !u!1 &3270789783981116916
 GameObject:
@@ -599,7 +600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 50
   maxhp: 50
-  attack: 40
+  attack: 25
   attackCooldown: 0
   attackRealCooldown: 0.5
   iFrames: 0
@@ -608,6 +609,7 @@ MonoBehaviour:
   punchingGate: 0
   player: {fileID: 0}
   hitbox: {fileID: 2830341637222875895}
+  projectile: {fileID: 0}
   game: {fileID: 0}
   hitboxCollision: {fileID: 0}
   playerScript: {fileID: 0}

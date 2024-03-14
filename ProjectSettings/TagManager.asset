@@ -10,6 +10,7 @@ TagManager:
   - Monster Projectile
   - Gates
   - Monster
+  - Walls
   layers:
   - Default
   - TransparentFX

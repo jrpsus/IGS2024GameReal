@@ -22,7 +22,14 @@ public class UIScript : MonoBehaviour
     {
         text[0].text = Mathf.Floor(playerScript.hp) + "/" + Mathf.Floor(playerScript.maxhp);
         text[1].text = "$" + playerScript.cash;
-        text[2].text = "Round " + game.round;
+        if (game.timeRemaining >= 0)
+        {
+            text[2].text = "Round " + (game.round + 1) + " starts in " + Mathf.Floor(game.timeRemaining * 10) / 10;
+        }
+        else
+        {
+            text[2].text = "Round " + game.round;
+        }
         healthFill.fillAmount = playerScript.hp / playerScript.maxhp;
     }
 }

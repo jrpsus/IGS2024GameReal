@@ -16,14 +16,19 @@ public class GameScript : MonoBehaviour
     public int[] zombieArsonists;
     public int[] zombieFreezers;
     public bool[] gateUnlocked;
+    public GameObject player;
+    public PlayerScript playerScript;
     public GameObject[] monsters;
+    public GameObject[] moneySprites;
     public Vector3 mouse;
     public Vector2[] spawnPosition;
     public Vector2[] spawnRange;
 
     void Start()
     {
-        InvokeRepeating("SpawnCycle", 10f, 5f);
+        InvokeRepeating("SpawnCycle", 5f, 5f);
+        player = GameObject.Find("Player");
+        playerScript = player.GetComponent<PlayerScript>();
     }
 
     void Update()
@@ -34,6 +39,8 @@ public class GameScript : MonoBehaviour
             if (timeRemaining <= 0f)
             {
                 timeRemaining = round + 9f;
+                playerScript.cash += round * 3f;
+                playerScript.hp += 100f;
             }
             else
             {
@@ -57,7 +64,7 @@ public class GameScript : MonoBehaviour
     }
     public void SpawnCycle()
     {
-        for (int i = 0; i >= monstersQueue.Length; i++)
+        for (int i = 0; i < monstersQueue.Length; i++)
         {
             if (monstersQueue[i] >= 1)
             {

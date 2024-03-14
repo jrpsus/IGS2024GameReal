@@ -14,8 +14,8 @@ public class Inventory : MonoBehaviour
     3 = consumable
     4 = perk
      */ 
-    public float[] itemDamage/* = { 10f, 40f, 65f, 90f, 110f, 200f, 800f, 300f, 1000f, 1500f }*/;
-    public float[] itemCooldown/* = { 0.5f, 1.2f, 1f, 1.5f, 0.9f, 0.6f, 0.5f, 0.2f, 1.5f, 1f }*/;
+    public float[] itemDamage/* = { 20f, 45f, 95f, 160f, 210f, 200f, 800f, 300f, 1000f, 1500f }*/;
+    public float[] itemCooldown/* = { 0.5f, 0.8f, 1f, 1.5f, 0.9f, 0.6f, 0.5f, 0.2f, 1.5f, 1f }*/;
     public Sprite[] itemImage;
     void Start()
     {

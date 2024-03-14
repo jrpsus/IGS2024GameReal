@@ -9,9 +9,11 @@ public class PauseScript : MonoBehaviour
 {
     public bool paused = false;
     public GameObject pauseScreen;
+    public PlayerScript player;
 
     void Start()
     {
+        player = GameObject.Find("Player").GetComponent<PlayerScript>();
         pauseScreen = GameObject.Find("PauseMenu");
         pauseScreen.SetActive(false);
     }
@@ -32,13 +34,14 @@ public class PauseScript : MonoBehaviour
     }
     public void LoadScene(string name)
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(name);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && player.hp > 0f)
         {
             TogglePause();
         }

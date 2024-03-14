@@ -15,6 +15,7 @@ public class MonsterScript : MonoBehaviour
     public bool punchingGate = false;
     public Transform player;
     public GameObject hitbox;
+    public GameObject projectile;
     public GameScript game;
     public Collider2D hitboxCollision;
     public PlayerScript playerScript;
@@ -31,8 +32,9 @@ public class MonsterScript : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
-    void Start()
+    void Awake()
     {
+        player = GameObject.Find("Player").transform;
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -93,12 +95,27 @@ public class MonsterScript : MonoBehaviour
             {
                 if (distanceToPlayer <= 2)
                 {
-                    anim.SetInteger("State", 1);
+                    anim.SetInteger("State", type);
+                }
+            }
+            else if (type == 3)
+            {
+                if (distanceToPlayer <= 10)
+                {
+                    anim.SetInteger("State", 3);
+                    if (attackCooldown <= 0f)
+                    {
+                        Instantiate(projectile, transform.localPosition + (transform.up * 0.7f + transform.right * transform.localScale.x * 35f), transform.rotation);
+                        attackCooldown = attackRealCooldown;
+                    }
                 }
             }
         }
         iFrames -= Time.deltaTime;
-        attackCooldown -= Time.deltaTime;
+        if (attackCooldown >= 0f)
+        {
+            attackCooldown -= Time.deltaTime;
+        }
         if (hp <= 0)
         {
             Die();
@@ -117,10 +134,17 @@ public class MonsterScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Gates")
         {
-            punchingGate = true;
-            if (type == 1 || type == 2)
+            if (collision.gameObject.GetComponent<GateScript>().gatehp > 0f)
             {
-                anim.SetInteger("State", 1);
+                punchingGate = true;
+                if (type == 1 || type == 2)
+                {
+                    anim.SetInteger("State", type);
+                }
+            }
+            else
+            {
+                punchingGate = false;
             }
         }
     }
@@ -133,6 +157,14 @@ public class MonsterScript : MonoBehaviour
     }
     public void Die()
     {
+        game.monstersRemaining -= 1;
+        for (int i = 0; i < moneyDropped.Length; i++)
+        {
+            for (int j = 0; j < moneyDropped[i]; j++)
+            {
+                Instantiate(game.moneySprites[i], transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f), Quaternion.identity);
+            }
+        }
         Destroy(gameObject);
     }
     void FlipSprite(Vector2 direction)
