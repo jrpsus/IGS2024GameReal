@@ -27,7 +27,11 @@ public class PadScript : MonoBehaviour
         {
             player.purchasePad = id;
             player.purchasePadTime = 0.2f;
-            if (type == 2)
+            if (type == 3)
+            {
+
+            }
+            else if (type == 2)
             {
                 if (Input.GetKey(KeyCode.Space))
                 {
