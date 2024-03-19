@@ -24,6 +24,7 @@ public class PlayerScript : MonoBehaviour
     public Vector3 movement;
     public Rigidbody2D rb;
     public bool[] perks;
+    public bool[] rooms;
     public int[] inv;
     public int[] invc;
     public int[] invt;

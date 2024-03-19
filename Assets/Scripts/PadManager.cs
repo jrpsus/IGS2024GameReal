@@ -33,6 +33,14 @@ public class PadManager : MonoBehaviour
             {
                 text.text = "Press Space to buy " + inventory.itemName[pad.item] + " for $" + pad.value;
             }
+            else if (pad.type == 3 && !player.rooms[pad.item])
+            {
+                text.text = "Press Space to unlock " + inventory.roomName[pad.item] + " for $" + pad.value;
+            }
+            else if (pad.type == 4)
+            {
+                text.text = "Press Space to unlock " + inventory.perkName[pad.item] + " for $" + pad.value;
+            }
         }
         else
         {

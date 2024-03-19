@@ -8,6 +8,7 @@ public class PadScript : MonoBehaviour
     public int id;
     public int type; // 1 = gate, 2 = item
     public GateScript gate;
+    public DoorScript door;
     public int item;
     public float value;
     public PlayerScript player;
@@ -16,7 +17,6 @@ public class PadScript : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<PlayerScript>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -29,7 +29,15 @@ public class PadScript : MonoBehaviour
             player.purchasePadTime = 0.2f;
             if (type == 3)
             {
-
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    if (player.cash >= value && !player.rooms[item])
+                    {
+                        player.cash -= value;
+                        player.rooms[item] = true;
+                        door.Open();
+                    }
+                }
             }
             else if (type == 2)
             {

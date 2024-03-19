@@ -12,8 +12,9 @@ public class Inventory : MonoBehaviour
     1 = weapon
     2 = ammunition
     3 = consumable
-    4 = perk
-     */ 
+     */
+    public string[] perkName;
+    public string[] roomName;
     public float[] itemDamage/* = { 20f, 45f, 95f, 160f, 210f, 200f, 800f, 300f, 1000f, 1500f }*/;
     public float[] itemCooldown/* = { 0.5f, 0.8f, 1f, 1.5f, 0.9f, 0.6f, 0.5f, 0.2f, 1.5f, 1f }*/;
     public Sprite[] itemImage;
